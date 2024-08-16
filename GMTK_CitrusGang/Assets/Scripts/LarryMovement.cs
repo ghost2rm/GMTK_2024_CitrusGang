@@ -15,19 +15,41 @@ public class LarryMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+       
 
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
         }
+
+
+        //Using GetAxisRaw makes it impossible to 
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            hMove += -1.0f;
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            hMove += 1.0f;
+        }
+
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            hMove -= -1.0f;
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            hMove -= 1.0f;
+        }
+
     }
 
     //Update is called a fixed amount 
     private void FixedUpdate()
     {
         //Move Character 
-        controller.Move(hMove * Time.fixedDeltaTime, false, jump);
+        controller.Move((hMove * runSpeed) * Time.fixedDeltaTime, false, jump);
         jump = false;
     }
 }
