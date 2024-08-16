@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LarryMovement : MonoBehaviour
+public class MaryMovement : MonoBehaviour
 {
     public CharacterController2D controller;
 
