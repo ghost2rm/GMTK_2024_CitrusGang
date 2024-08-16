@@ -16,6 +16,7 @@ public class TopDownMovement : MonoBehaviour
         //Input
 
         //Horizontal Movement
+        #region
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             topMovement.x += -1.0f;
@@ -32,9 +33,10 @@ public class TopDownMovement : MonoBehaviour
         {
             topMovement.x -= 1.0f;
         }
-
+        #endregion
 
         //Vertical movement
+        #region
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             topMovement.y += -1.0f;
@@ -51,7 +53,7 @@ public class TopDownMovement : MonoBehaviour
         {
             topMovement.y -= 1.0f;
         }
-
+        #endregion
 
     }
 
