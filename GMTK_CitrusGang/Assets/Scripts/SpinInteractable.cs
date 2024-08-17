@@ -10,15 +10,9 @@ public class SpinInteractable : Interactables
         interactAction.AddListener(Spin);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Spin()
     {
-        this.transform.Rotate(0, 0, 90f);
+        this.transform.Rotate(0, 0, -90f);
         Debug.Log("spin");
     }
 }
