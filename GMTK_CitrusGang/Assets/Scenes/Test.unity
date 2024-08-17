@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 982528528}
   - component: {fileID: 982528527}
   - component: {fileID: 982528526}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: InteractCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,6 +456,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24be1d8f3ec5664bbcd8e965b5fd09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inRange: 0
+  m_isInteracting: 0
+  mInteract: 102
+  lInteract: 305
   interactAction:
     m_PersistentCalls:
       m_Calls:
@@ -471,7 +475,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  dropAction:
+  stopAction:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &982528529
@@ -489,11 +493,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1647386684 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1492119901087433416, guid: c97aa686b875e4040862aa349b1bcccb, type: 3}
-  m_PrefabInstance: {fileID: 8018548126559401510}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1674890680
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fb0e0c6ef67d544832903e409df068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_held: 0
 --- !u!50 &1813926160
 Rigidbody2D:
   serializedVersion: 4
@@ -613,11 +611,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b7ee6a0be0256804f84ae8547956d8ec, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1813926161
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -687,7 +685,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.89, y: -2.69}
+  m_AnchoredPosition: {x: 1.924, y: -2.694}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1813926164
@@ -754,6 +752,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24be1d8f3ec5664bbcd8e965b5fd09d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inRange: 0
+  m_isInteracting: 0
+  mInteract: 102
+  lInteract: 305
   interactAction:
     m_PersistentCalls:
       m_Calls:
@@ -769,9 +771,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  stopAction:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 1813926159}
         m_TargetAssemblyTypeName: Pickup, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: DropObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -781,9 +786,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  dropAction:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &2108757389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7131507711996069307, guid: 09a19398e243e1f40a4d7817fb748fa1, type: 3}
@@ -798,10 +800,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7124196773471184596, guid: 09a19398e243e1f40a4d7817fb748fa1, type: 3}
       propertyPath: grabPoint
-      value: 
-      objectReference: {fileID: 2108757389}
-    - target: {fileID: 7124196773471184596, guid: 09a19398e243e1f40a4d7817fb748fa1, type: 3}
-      propertyPath: m_grabPoint
       value: 
       objectReference: {fileID: 2108757389}
     - target: {fileID: 7124196773471184598, guid: 09a19398e243e1f40a4d7817fb748fa1, type: 3}
@@ -847,6 +845,26 @@ PrefabInstance:
     - target: {fileID: 7124196773471184598, guid: 09a19398e243e1f40a4d7817fb748fa1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7124196773471184599, guid: 09a19398e243e1f40a4d7817fb748fa1, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7787396
+      objectReference: {fileID: 0}
+    - target: {fileID: 7124196773471184599, guid: 09a19398e243e1f40a4d7817fb748fa1, type: 3}
+      propertyPath: m_Size.y
+      value: 1.9864042
+      objectReference: {fileID: 0}
+    - target: {fileID: 7124196773471184599, guid: 09a19398e243e1f40a4d7817fb748fa1, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.054505765
+      objectReference: {fileID: 0}
+    - target: {fileID: 7124196773471184599, guid: 09a19398e243e1f40a4d7817fb748fa1, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.11679804
+      objectReference: {fileID: 0}
+    - target: {fileID: 7124196773471184616, guid: 09a19398e243e1f40a4d7817fb748fa1, type: 3}
+      propertyPath: m_WhatIsGround.m_Bits
+      value: 151
       objectReference: {fileID: 0}
     - target: {fileID: 7124196773471184618, guid: 09a19398e243e1f40a4d7817fb748fa1, type: 3}
       propertyPath: m_Name
@@ -909,6 +927,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8018548125168722499, guid: c97aa686b875e4040862aa349b1bcccb, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7398067
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018548125168722499, guid: c97aa686b875e4040862aa349b1bcccb, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0409098
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018548125168722499, guid: c97aa686b875e4040862aa349b1bcccb, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.1206913
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018548125168722499, guid: c97aa686b875e4040862aa349b1bcccb, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.027252972
+      objectReference: {fileID: 0}
     - target: {fileID: 8018548125168722502, guid: c97aa686b875e4040862aa349b1bcccb, type: 3}
       propertyPath: m_Name
       value: Larry
@@ -917,9 +951,5 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Larry
       objectReference: {fileID: 0}
-    - target: {fileID: 8018548125168722503, guid: c97aa686b875e4040862aa349b1bcccb, type: 3}
-      propertyPath: grabPoint
-      value: 
-      objectReference: {fileID: 1647386684}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c97aa686b875e4040862aa349b1bcccb, type: 3}

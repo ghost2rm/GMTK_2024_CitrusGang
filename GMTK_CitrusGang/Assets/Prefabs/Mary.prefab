@@ -273,4 +273,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7124196773471184616}
   runSpeed: 40
-  grabPoint: {fileID: 0}
+  m_grabPoint: {fileID: 7131507711996069307}

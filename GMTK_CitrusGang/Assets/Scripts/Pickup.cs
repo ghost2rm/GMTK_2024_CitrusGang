@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
+    Interactables thisBox;
 
-    [SerializeField] private bool m_held;
-    public bool held
-    {
-        get => m_held;
-        private set => m_held = value;
-    }
-
+    //Pick up this box
     public void PickupObj(GameObject obj)
     {
+        thisBox = this.gameObject.GetComponent<Interactables>(); //Get this boxes interacatable status. 
+
+
         MaryMovement grab = obj.GetComponent<MaryMovement>();
         
         if (grab == null)
@@ -22,25 +20,21 @@ public class Pickup : MonoBehaviour
         }
         else
         {
+            this.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
             this.transform.SetParent(grab.grabPoint);
             Debug.Log("grabbed");
-            this.gameObject.GetComponent<Rigidbody2D>().simulated = false;
-            held = true;
+            thisBox.IsInteracting = true;
         }
     }
 
+    //Grab world position, unparent the box, set rigid body to Dynamic, set world transform
    public void DropObject()
    {
-       if (held == true)
-       {
-           this.transform.SetParent(null);
-           this.gameObject.GetComponent<Rigidbody2D>().simulated = true;
-           held = false;
-       }
-       else
-       {
-           Debug.Log("dropped");
-   
-       }
+        Vector2 currentWorldPos = this.transform.position;
+        this.transform.SetParent(null);
+        this.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        this.transform.position = currentWorldPos;
+        thisBox.IsInteracting = false;
+        Debug.Log("dropped");   
    }
 }

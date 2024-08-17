@@ -53,7 +53,7 @@ public class MaryMovement : MonoBehaviour
 
     }
 
-    //Update is called a fixed amount 
+    //Called 50 times p/s by default
     private void FixedUpdate()
     {
         //Move Character 

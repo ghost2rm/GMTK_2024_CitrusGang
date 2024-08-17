@@ -9,7 +9,14 @@ public class TopDownMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    public Transform grabPoint;
+    [SerializeField] private Transform m_grabPoint;
+
+    public Transform grabPoint
+    {
+        get => m_grabPoint;
+        private set => m_grabPoint = value;
+    }
+
 
     Vector2 topMovement;
 
@@ -60,7 +67,7 @@ public class TopDownMovement : MonoBehaviour
 
     }
 
-
+    //Called 50 times p/s by default
     void FixedUpdate()
     {
         //Movement
