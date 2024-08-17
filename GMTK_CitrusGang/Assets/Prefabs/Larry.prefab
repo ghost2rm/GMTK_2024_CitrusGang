@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8018548125168722499}
   m_Layer: 6
   m_Name: Larry
-  m_TagString: Untagged
+  m_TagString: Larry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 8018548125168722500}
-  grabPoint: {fileID: 1492119901087433416}
+  m_grabPoint: {fileID: 1492119901087433416}
 --- !u!61 &8018548125168722499
 BoxCollider2D:
   m_ObjectHideFlags: 0

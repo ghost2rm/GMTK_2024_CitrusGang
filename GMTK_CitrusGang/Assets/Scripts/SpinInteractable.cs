@@ -16,8 +16,9 @@ public class SpinInteractable : Interactables
         
     }
 
-    void Spin()
+    public void Spin()
     {
         this.transform.Rotate(0, 0, 90f);
+        Debug.Log("spin");
     }
 }
