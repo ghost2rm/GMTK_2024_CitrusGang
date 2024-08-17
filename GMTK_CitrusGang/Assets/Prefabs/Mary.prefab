@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 7124196773471184596}
   m_Layer: 6
   m_Name: Mary
-  m_TagString: Untagged
+  m_TagString: Mary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

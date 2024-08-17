@@ -21,7 +21,6 @@ public class Interactables : MonoBehaviour
 
     private void Update()
     {
-
         if (inRange && !IsInteracting) //If player is in range
         {
             if (Input.GetKeyDown(mInteract)) //If Mary interacts
@@ -31,6 +30,7 @@ public class Interactables : MonoBehaviour
 
             if (Input.GetKeyDown(lInteract)) //If Larry interacts
             {
+                Debug.Log("we in business");
                 interactAction.Invoke(); //Fire event
             }
         }
