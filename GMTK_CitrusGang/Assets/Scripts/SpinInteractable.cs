@@ -10,7 +10,7 @@ public class SpinInteractable : Interactables
         interactAction.AddListener(Spin);
     }
 
-    public void Spin()
+    void Spin()
     {
         this.transform.Rotate(0, 0, -90f);
         Debug.Log("spin");
