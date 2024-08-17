@@ -5,10 +5,11 @@ using UnityEngine.Events;
 
 public class Interactables : MonoBehaviour
 {
-    public bool inRange = false;
+    bool inRange = false;
     KeyCode mInteract = KeyCode.F; //Mary's interact keycode
     KeyCode lInteract = KeyCode.RightControl; //Larry's interact keycode
     public UnityEvent interactAction;
+    public UnityEvent dropAction;
 
     private void Update()
     {
@@ -20,6 +21,9 @@ public class Interactables : MonoBehaviour
                 interactAction.Invoke(); //Fire Event
             }
         }
+
+        
+
        
     }
 

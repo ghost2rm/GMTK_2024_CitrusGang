@@ -9,7 +9,10 @@ public class TopDownMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    public Transform grabPoint;
+
     Vector2 topMovement;
+
     // Update is called once per frame
     void Update()
     {
