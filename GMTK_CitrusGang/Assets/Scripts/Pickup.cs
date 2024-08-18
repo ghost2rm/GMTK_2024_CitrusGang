@@ -7,7 +7,7 @@ public class Pickup : MonoBehaviour
     Interactables thisBox;
     BoxCollider2D hardBox;
     MaryMovement grab;
-    //[SerializeField] private GameObject newCollisionBox; //Change the collison box to a larger size to match the holding box animation.
+  
 
     //Pick up this box
 
