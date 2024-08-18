@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5400245919881178354}
   - component: {fileID: 5400245919881178345}
   - component: {fileID: 5400245919881178344}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ MonoBehaviour:
         m_MethodName: PickupObj
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 7124196773471184618, guid: 09a19398e243e1f40a4d7817fb748fa1, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
