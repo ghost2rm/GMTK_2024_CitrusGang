@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Larry
   - Mary
+  - Mirror
+  - Ray Source
   layers:
   - Default
   - TransparentFX

@@ -13,6 +13,6 @@ public class SpinInteractable : Interactables
     void Spin()
     {
         this.transform.Rotate(0, 0, -90f);
-        Debug.Log("spin");
+        Debug.Log("spin: " + transform.eulerAngles.z);
     }
 }
