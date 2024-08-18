@@ -12,6 +12,14 @@ public class MaryMovement : MonoBehaviour
 
     bool jump = false;
 
+    [SerializeField] private Transform m_grabPoint;
+
+    public Transform grabPoint
+    {
+        get => m_grabPoint;
+        private set => m_grabPoint = value;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -45,7 +53,7 @@ public class MaryMovement : MonoBehaviour
 
     }
 
-    //Update is called a fixed amount 
+    //Called 50 times p/s by default
     private void FixedUpdate()
     {
         //Move Character 
