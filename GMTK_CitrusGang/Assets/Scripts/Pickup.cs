@@ -20,7 +20,11 @@ public class Pickup : MonoBehaviour
         }
         else
         {
+            //Set position to the grab points, set to kinematic then parent.
+            this.transform.position = grab.grabPoint.position;
             this.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+
+            this.transform.position = grab.grabPoint.position;
             this.transform.SetParent(grab.grabPoint);
             Debug.Log("grabbed");
             thisBox.IsInteracting = true;
