@@ -13,6 +13,13 @@ public class MaryMovement : MonoBehaviour
     bool jump = false;
 
     [SerializeField] private Transform m_grabPoint;
+    [SerializeField] private BoxCollider2D m_modCollider;
+
+    public BoxCollider2D modCollider
+    {
+        get => m_modCollider;
+        private set => m_modCollider = value; 
+    }
 
     public Transform grabPoint
     {
