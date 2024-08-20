@@ -61,6 +61,12 @@ TagManager:
   - name: Player
     uniqueID: 1520861111
     locked: 0
+  - name: Larry Map
+    uniqueID: 2225197973
+    locked: 0
+  - name: Larry
+    uniqueID: 1265767087
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
