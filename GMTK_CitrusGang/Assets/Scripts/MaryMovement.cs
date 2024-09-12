@@ -13,7 +13,15 @@ public class MaryMovement : MonoBehaviour
     bool jump = false;
 
     [SerializeField] private Transform m_grabPoint;
-    [SerializeField] private BoxCollider2D m_modCollider;
+    [SerializeField] private BoxCollider2D m_modCollider; // A bigger collider for when Mary holds a box
+    private bool m_stunned = false;
+
+
+    public bool Stunned
+    {
+        get => m_stunned;
+        set => m_stunned = value;
+    }
 
     public BoxCollider2D modCollider
     {
@@ -32,7 +40,7 @@ public class MaryMovement : MonoBehaviour
     {
        
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !Stunned)
         {
             jump = true;
         }
@@ -64,7 +72,11 @@ public class MaryMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //Move Character 
-        controller.Move((hMove * runSpeed) * Time.fixedDeltaTime, false, jump);
+        if (!Stunned)
+        { 
+            controller.Move((hMove * runSpeed) * Time.fixedDeltaTime, false, jump); 
+        }
         jump = false;
+
     }
 }

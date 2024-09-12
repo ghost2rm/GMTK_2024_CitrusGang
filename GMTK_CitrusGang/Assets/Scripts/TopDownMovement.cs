@@ -10,6 +10,13 @@ public class TopDownMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     [SerializeField] private Transform m_grabPoint;
+    private bool m_stunned = false;
+
+    public bool Stunned
+    {
+        get => m_stunned;
+        set => m_stunned = value;
+    }
 
     public Transform grabPoint
     {
@@ -72,6 +79,10 @@ public class TopDownMovement : MonoBehaviour
     {
         //Movement
 
-        rb.MovePosition(rb.position + topMovement * moveSpeed * Time.fixedDeltaTime);
+        if (!Stunned)
+        {
+            rb.MovePosition(rb.position + topMovement * moveSpeed * Time.fixedDeltaTime);
+        }
+        
     }
 }
